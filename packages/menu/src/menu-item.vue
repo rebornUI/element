@@ -87,11 +87,15 @@
     methods: {
       onMouseEnter() {
         if (this.mode === 'horizontal' && !this.rootMenu.backgroundColor) return;
-        this.$el.style.backgroundColor = this.hoverBackground;
+        if(this.hoverBackground){
+          this.$el.style.backgroundColor = this.hoverBackground;
+        }
       },
       onMouseLeave() {
         if (this.mode === 'horizontal' && !this.rootMenu.backgroundColor) return;
-        this.$el.style.backgroundColor = this.backgroundColor;
+        if(this.hoverBackground){
+          this.$el.style.backgroundColor = this.hoverBackground;
+        }
       },
       handleClick() {
         if (!this.disabled) {
